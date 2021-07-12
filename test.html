@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./js/jquery-3.4.1.js"></script>
+	</head>
+	<body>
+		<div>
+			<span onmouseout="simpleDateFormat('Wed Mar 22 13:38:37 CST 2017')">
+				fdbdfbsd
+			</span>
+			<span id="ble">
+
+			</span>
+		</div>
+		<script>
+			var time = "";
+			/**
+			 * 可以自定义是否显示 时间 星期 分割符
+			 * 
+			 * @param {Object} inputstr 输入的日期
+			 * @param {Object} showsplit 分割符
+			 * @param {Object} showweek 星期
+			 * @param {Object} showtime 时间
+			 */
+			// Wed Mar 22 13:38:37 CST 2017 转换为 yyyy-MM-dd 
+			function todate(inputstr, showsplit, showweek, showtime) {
+				//Wed Mar 22 13:38:37 CST 2017
+				inputstr = inputstr + ""; //末尾加一个空格
+				var date = "";
+
+				var month = new Array();
+				var week = new Array();
+
+				month["Jan"] = 1;
+				month["Feb"] = 2;
+				month["Mar"] = 3;
+				month["Apr"] = 4;
+				month["May"] = 5;
+				month["Jan"] = 6;
+				month["Jul"] = 7;
+				month["Aug"] = 8;
+				month["Sep"] = 9;
+				month["Oct"] = 10;
+				month["Nov"] = 11;
+				month["Dec"] = 12;
+				week["Mon"] = "一";
+				week["Tue"] = "二";
+				week["Wed"] = "三";
+				week["Thu"] = "四";
+				week["Fri"] = "五";
+				week["Sat"] = "六";
+				week["Sun"] = "日";
+
+				str = inputstr.split(" ");
+
+				date = str[5];
+				time = str[3];
+				date += showsplit + month[str[1]] + showsplit + str[2];
+				if (showweek) {
+					date += "    " + " 星期" + week[str[0]];
+				}
+				if (showtime) {
+					date += " " + time;
+				}
+				return date;
+			};
+
+			/**
+			 * 可以自定义是否显示  星期 分割符
+			 *默认不带 时间
+			 * @param {Object} inputstr 输入的日期
+			 * @param {Object} showsplit 分割符
+			 * @param {Object} showweek 星期
+			 */
+			function toDate(inputstr, showsplit, showweek) {
+				var showtime = false;
+				return todate(inputstr, showsplit, showweek, showtime);
+			};
+			/**
+			 * 可以自定义是否显示 时间 分割符
+			 * 默认不带 星期
+			 * @param {Object} inputstr 输入的日期
+			 * @param {Object} showsplit 分割符
+			 * @param {Object} showtime 时间
+			 */
+			function toDatetime(inputstr, showsplit, showtime) {
+				var showweek = false;
+				return todate(inputstr, showsplit, showweek, showtime);
+			};
+			/**
+			 * 可以自定义 分割符 
+			 * 默认不带 时间 星期
+			 * @param {Object} inputstr 输入的日期
+			 * @param {Object} showsplit 分割符
+			 */
+			function defToDate(inputstr, showsplit) {
+				var showweek = false;
+				var showtime = false;
+				return todate(inputstr, showsplit, showweek, showtime);
+			};
+			/**
+			 * 可以自定义 分割符 
+			 * 默认不带 星期
+			 * @param {Object} inputstr 输入的日期
+			 * @param {Object} showsplit 分割符
+			 */
+			function defTodatetime(inputstr, showsplit) {
+				var showweek = false;
+				var showtime = true;
+				// var datatime = todate(inputstr, showsplit, showweek, showtime);
+				return todate(inputstr, showsplit, showweek, showtime);
+			};
+			/**不可以自定义  
+			 * 默认不带 时间 星期
+			 * @param {Object} inputstr 输入的日期
+			 */
+			function defToDate(inputstr) {
+				var showsplit = "-";
+				var showweek = false;
+				var showtime = false;
+				return todate(inputstr, showsplit, showweek, showtime);
+			};
+			/**不可以自定义  
+			 * 默认不带 时间 
+			 * @param {Object} inputstr 输入的日期
+			 */
+			function defTodatetime(inputstr) {
+				var showsplit = "-";
+				var showweek = false;
+				var showtime = true;
+				// var datatime = todate(inputstr, showsplit, showweek, showtime);
+				return todate(inputstr, showsplit, showweek, showtime);
+			};
+			// test
+			// var a = "Wed Mar 22 13:38:37 CST 2017";Mon Dec 14 14:37:24 CST 2020
+			// var b = new Date(a);
+			// var c = toDate(a, "-", true);
+			// var d = toDate(a, "/", false);
+			// var e = toDatetime(a, "-", true);
+			// var f = toDatetime(a, "/", true);
+			// var g = defToDate(a);
+			// var h = defTodatetime(a);
+
+			// alert(b); //Thu Mar 23 2017 03:38:37 GMT+0800 (中国标准时间)
+			// alert(c); //2017-3-22 星期三
+			// alert(d); //2017-3-22	13:38:37
+			// alert(e); //2017/3/22 
+			// alert(f); //2017/3/22 13:38:37
+			// alert(g);
+			// alert(h);
+
+			var a = "Mon Dec 14 14:37:24 CST 2020";
+			var b = new Date(a);
+			// alert(defTodatetime("Mon Dec 14 14:37:24 CST 2020"));
+			// console.log(defTodatetime(a));
+			
+			
+			function simpleDateFormat(ab) {
+				console.log(ab);
+				// alert(ab);
+				return document.getElementById("ble").innerText += defTodatetime(ab);
+			}
+		</script>
+	</body>
+</html>

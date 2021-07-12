@@ -1,0 +1,103 @@
+/**
+ * 注册、登录、找回
+ * @auther aliketh.xhmy
+ * @version 0.0.1
+ */
+
+.login-cont-top {
+	height: 175px;
+	padding-top: 25px;
+}
+
+.login-cont-bimg {
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	margin: 0px auto;
+}
+
+.login-cont-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+}
+
+.login-cont {
+	margin-top: 65px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.login-cont-t {
+	margin: -10px auto 0;
+	margin-bottom: 25px;
+}
+
+.login-cont-sl {
+	float: left;
+	margin-left: 110px;
+}
+
+.login-cont-sr {
+	float: right;
+}
+
+.login-cont-a {
+	color: blue;
+}
+
+/**
+ * footer
+ */
+.foot-htxt {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.foot-htxt-ul {
+	line-height: 1.5;
+	text-align: center;
+}
+
+#footer-public-content {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.footer-public-a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.footer-content-div {
+	width: 90%;
+	margin: auto;
+}
+
+.footer-content-body {
+	color: red;
+}
+
+.auth-register,
+.auth-login,
+.auth-forgot {
+	position: relative;
+	left: 0;
+	width: 100%;
+	margin: 0 auto 10px;
+}
+
+.auth-forgot,
+.auth-register {
+	bottom: -20px;
+}
+
+.auth-login {
+	bottom: -70px;
+}
+
+.auth-template {
+	bottom: -20px;
+	padding-bottom: 20px;
+}

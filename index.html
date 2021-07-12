@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<link rel="stylesheet" href="./layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="./css/auth.css" />
+		<style type="text/css">
+			.self-nav-serach:after .self-nav-serach:hover {
+				background-color: unset;
+			}
+
+			/* 取消 导航栏hover以及after效果 */
+			.layui-nav .layui-this:after,
+			.layui-nav-bar,
+			.layui-nav-tree .layui-nav-itemed:after {
+				background-color: unset;
+			}
+
+			.se-inline {
+				display: inline;
+			}
+
+			.se-bra {
+				border-radius: unset;
+			}
+
+			.se-nav-input-bra {
+				width: 329px;
+				margin-left: 100px;
+			}
+
+			.se-nav-btn-bra {
+				margin-left: -3px;
+				border-top-right-radius: 3px;
+				border-bottom-right-radius: 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="nav" class="layui-nav" lay-fitter="template">
+			<li class="layui-nav-item">
+				<a href="index.html"><img src="./img/20201129165053.png" style="width: 60px; height: 60px;"></a>
+			</li>
+			<script id="xhmy" type="text/html">
+				<!-- <li class="layui-nav-item <%d.title%>">
+					<a href="javascript:xhmyNav(0);"></a>
+				</li> -->
+				<%# layui.each(d.list, function(index, item){ %>
+				<%# if(index == 0) {%>
+			<li class="layui-nav-item <%d.title%>">
+				<%# } else{ %>
+			<li class="layui-nav-item">
+				<%# } %>
+				<a href=""><% item.navName %></a>
+			</li>
+			<%# }); %>
+			<!-- 	<%#  if(d.list.length === 0){ %>
+				无数据
+				<%#  } %> -->
+			</script>
+			<div id="view" class="se-inline"></div>
+
+		</ul>
+
+
+
+
+		<div id="footer" class="layui-container auth-template">
+			<hr>
+			<div class="footer-content-div">
+				<div id="footer-body-box" class="layui-row" style="text-align: center;">
+					<h2>感谢 <a href="https://pages.github.com/" target="_blank"> GitHub Pages </a> 提供支持 </h2>
+							<h2>友情连接
+								<a href="https://www.layui.com/" target="_blank"> &nbsp; layui </a> &nbsp; || &nbsp;
+								<a href="https://cn.vuejs.org/"> vue </a> &nbsp; || &nbsp;
+								<a href="https://gitee.com"> gitee </a>
+							</h2>
+					
+					
+							<!-- 							<div class="layui-col-md3 layui-col-sm3 layui-col-lg3 layui-hide-xs">
+								<h2 class="foot-htxt">友情连接</h2>
+								<ul class="foot-htxt-ul">
+									<li><a href="">gitee</a></li>
+									<li><a href="">github</a></li>
+									<li><a href="">AOSC</a></li>
+									<li><a href="https://pandao.github.io/editor.md">mdEditor</a></li>
+								</ul>
+							</div> -->
+					
+				</div>
+				<hr>
+				<div id="footer-public-content" class="footer-public-content layui-row" style="">
+					<p>反馈以及联系邮箱：aliketh.my@foxmail.com &nbsp; || &nbsp; aliketh_zsx@163.com </p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./layui/layui.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./js/nav_address.js"></script>
+		<script type="text/javascript" src="./js/vue.js"></script>
+		<script>
+			layui.use(['jquery', 'element', 'laytpl'], function() {
+				var zsx = layui.jquery, // 加载jquery
+					laytpl = layui.laytpl, //
+					element = layui.element; // 导航的hover效果、二级菜单等功能，需要依赖element模块
+				//监听导航点击
+				element.on('nav(template)', function(elem) {
+					console.log(elem);
+				});
+
+				laytpl.config({
+					open: '<%',
+					close: '%>'
+				});
+				var data = navdata;
+				var getTpl = xhmy.innerHTML,
+					view = document.getElementById('view');
+				laytpl(getTpl).render(data, function(html) {
+					view.innerHTML = html;
+				});
+			});
+			const vm = new Vue({
+				el: '#nav',
+				data: {
+
+				}
+			});
+		</script>
+	</body>
+</html>
