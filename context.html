@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>context</title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+	</head>
+	<style>
+		.context-img {
+			width: 600px;
+			height: 600px;
+			overflow-x: hidden;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		.context-col {
+			padding: 5px 15px;
+		}
+
+		.cover-paddingTop {
+			position: relative;
+			padding-top: 100%;
+			overflow: hidden;
+		}
+
+		.cover-paddingTop img {
+			width: 100%;
+			position: absolute;
+			top: 0;
+		}
+
+		.project-img {
+			width: 60px;
+			height: 60px;
+			margin-left: 48px;
+		}
+
+		.project-h2 {
+			margin-top: 15px;
+			margin-bottom: 10px;
+			margin-left: 24px;
+		}
+
+		.project-context {
+			margin-left: 48px;
+			line-height: 2em;
+		}
+
+		.project-failure {
+			color: red;
+		}
+
+		.project-plan {
+			color: orange;
+		}
+
+		.project-end {
+			color: green;
+		}
+
+		.project-ongoing {
+			color: #0000FF;
+		}
+	</style>
+
+	<body>
+		<div id="app">
+			<context-body></context-body>
+			<div class="layui-row context-width" style="width: 90%; margin: 0 auto;">
+				<div class="layui-col-xs12 layui-col-sm12 layui-col-md3 layui-col-lg3 context-col project-plan">
+					<!-- <img src="img/dm-index.png" /> -->
+					<!-- <div style="width: 100%; height: 50px; background-color: red;"></div> -->
+					<h1>AOSC</h1>
+					<hr>
+					<h2 class="project-h2">简介</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp; &nbsp;aosc 中文为 学术开源社区 是 <b>Academic Open Source
+							Community</b> 的缩写名称。目前还在设计具体内容之中。</p>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;开发的本意是为了为更多学子爱好学术的用户提供一个相对良好的学术研究成果的发布平台，以及提供其他他人学术成果的下查询预览、下载、以及后期会上线的学术论文查重服务。
+						我们的目的是励志于提供更好的服务，更贴切于实际的收费价格，以及更合理的平台管理制度等等。</p>
+					<h2 class="project-h2">logo</h2>
+					<img class="project-img" src="img/aosc/项目-ico.png">
+					<h2 class="project-h2">功能</h2>
+					<ul class="project-context">
+						<li>用户注册、登录、找回、注销、权限</li>
+						<li>分类</li>
+						<li>分页</li>
+						<li>查询</li>
+						<li>下载</li>
+						<li>文件加载、保存</li>
+						<li>文件上传</li>
+						<li>图片上传</li>
+						<li>排行榜</li>
+						<li>加密</li>
+						<li>登录日志</li>
+						<li>评论、收藏、点赞、转发</li>
+						<li>消息</li>
+						<li>邮件</li>
+						<li>审批</li>
+						<li>反馈</li>
+						<!-- <li>消息</li> -->
+					</ul>
+					<h2 class="project-h2">设计理念</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp; &nbsp;我们的目的是励志于提供更好的服务，更贴切于实际的收费价格，以及更合理的平台管理制度等等。
+					</p>
+					<h2 class="project-h2">详细</h2>
+					<a class="project-context" href="javascript:;" @click="aosc('./pages/aosc.html')">&nbsp; &nbsp;
+						&nbsp; &nbsp;AOSC</a>
+				</div>
+				<div class="layui-col-xs12 layui-col-sm12 layui-col-md3 layui-col-lg3 context-col project-failure">
+					<!-- 	<div class="cover-paddingTop">
+					      <img src="./img/20201129165053.png"/>
+					 </div> -->
+					<!-- <div style="width: 100%; height: 100px; background-color: green;"></div> -->
+					<h1>DateManagement</h1>
+					<hr>
+					<h2 class="project-h2">简介</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;DateManagement 是一个我个人开发的一个数据管理系统简称 DM 。目前处于停止开发的状态，时间不足以去继续开发。</p>
+
+					<h2 class="project-h2">logo</h2>
+					<img class="project-img" src="./img/dm/dm.ico">
+					<h2 class="project-h2">功能</h2>
+					<ul class="project-context">
+						<li>用户注册、登录、找回</li>
+						<li>分类</li>
+						<li>分页</li>
+						<li>查询</li>
+						<li>登录日志</li>
+						<!-- <li>11313131133</li>
+						<li>11313131133</li>
+						<li>11313131133</li>
+						<li>11313131133</li> -->
+					</ul>
+					<h2 class="project-h2">设计理念</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;最初的时候个人因为文件比较多放的位置也比较乱，长时间不用所以当要找文件的时候往往需要找很长时间。</p>
+					<h2 class="project-h2">详细</h2>
+					<a class="project-context" href="javascript:;" @click="dm('./pages/dateManagement.html')">&nbsp;
+						&nbsp; &nbsp; &nbsp;DateManagement</a>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;对于个人来说这是一个失败的项目，之所以放在首页展示，也是为了激励自己不断学习前进。</p>
+
+				</div>
+				<div class="layui-col-xs12 layui-col-sm12 layui-col-md3 layui-col-lg3 context-col project-ongoing">
+					<!-- <div style="width: 100%; height: 100px; background-color: blue;"></div> -->
+					<h1>StorySharingSession</h1>
+					<hr>
+					<h2 class="project-h2">简介</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;这是我想跳出之前项目的影子而重新开始的项目。</p>
+					<h2 class="project-h2">logo</h2>
+					<img class="project-img" src="./img/sss/sss-ico.png">
+					<h2 class="project-h2">功能</h2>
+					<ul class="project-context">
+						<li>用户注册、登录、找回</li>
+						<li>分类</li>
+						<li>分页</li>
+						<li>查询</li>
+						<li>下载</li>
+						<li>登录日志</li>
+						<li>在线编辑</li>
+						<li>文件上传</li>
+						<li>图片上传</li>
+						<li>评论、收藏、点赞、转发</li>
+						<li>消息</li>
+						<li>排行榜</li>
+						<li>加密</li>
+						<li>审批</li>
+						<li>反馈</li>
+					</ul>
+					<h2 class="project-h2">设计理念</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;这个项目的设计指初，是为了打造一个以文字形式的，故事分享平台。主要以短篇幅的小故事分享为主，故事不在与长短，只在于表达自己的所感受。</p>
+					<h2 class="project-h2">详细</h2>
+					<a class="project-context" href="javascript:;"
+						@click="sss('./pages/storySharingSession.html')">&nbsp; &nbsp; &nbsp;
+						&nbsp;StorySharingSession</a>
+				</div>
+				<div class="layui-col-xs12 layui-col-sm12 layui-col-md3 layui-col-lg3 context-col project-end">
+					<!-- <div style="width: 100%; height: 100px; background-color: black;"></div> -->
+					<h1>CLMS</h1>
+					<hr>
+					<h2 class="project-h2">简介</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;CLMS 是 Comprehensive Library Management System 中文直译为综合图书管理系统，其前身是 DateManagement 。个人为了弥补
+						DateManagement 的失败而在原来的基础上进行重新构建而来。还是有一些 DateManagement 的影子。</p>
+					<h2 class="project-h2">logo</h2>
+					<img class="project-img" src="./img/clms/clms.ico">
+					<h2 class="project-h2">功能</h2>
+					<ul class="project-context">
+						<li>用户注册、登录、找回、权限、注销</li>
+						<li>分类</li>
+						<li>分页</li>
+						<li>查询</li>
+						<li>下载</li>
+						<li>登录日志</li>
+						<li>在线编辑</li>
+						<li>文件上传</li>
+						<li>图片上传</li>
+						<li>评论、收藏、点赞、转发</li>
+						<li>消息</li>
+						<li>排行榜</li>
+						<li>加密</li>
+						<li>审批</li>
+						<li>反馈</li>
+					</ul>
+					<h2 class="project-h2">设计理念</h2>
+					<p class="project-context">&nbsp; &nbsp; &nbsp;
+						&nbsp;这是一个基于 DateManagement 失败的项目中衍生出来的项目，相对与 DateManagement
+						来书这是是一个比较完整的项目。虽然功能实现的不是很多，实现的也只是简单的实现功能罢了。还有许多的组件样式都不是很好。</p>
+					<h2 class="project-h2">详细</h2>
+					<a class="project-context" href="javascript:;" @click="clms('./pages/clms.html')">&nbsp; &nbsp;
+						&nbsp; &nbsp;CLMS</a>
+
+				</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="./layui/layui.js"></script>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script>
+			Vue.component('context-body', {
+				props: ['title'],
+				data: function() {
+					return {}
+				},
+				template: '<div style="text-align: center;"><img src="./img/20201129165053.png" class="context-img"/></div>',
+				methods: {
+
+				}
+			})
+			const vm = new Vue({
+				el: "#app",
+				data: {
+
+				},
+				methods: {
+					aosc(str) {
+						console.log("aosc==>" + str);
+					},
+					dm(str) {
+						console.log("dm==>" + str);
+					},
+					sss(str) {
+						console.log("sss==>" + str);
+					},
+					clms(str) {
+						console.log("clms==>" + str);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

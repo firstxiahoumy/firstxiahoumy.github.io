@@ -1,20 +1,26 @@
 var navdata = { //模拟导航栏数据
-	"active": " layui-this",
+	// "active": " layui-this",
+	"homeUrl":"./index.html",
+	"logoUrl":"./img/20201129165053.png",
 	"list": [{
 		"navName": "aosc",
-		"url":"https://github.com/firstxiahoumy/aosc",
+		"url":"./pages/aosc.html",
 		"isActive":true
 	}, {
-		"navName": "数据管理",
-		"url":"https://github.com/firstxiahoumy/ssm-dm",
+		"navName": "DateManagement",
+		"url":"./pages/dateManagement.html",
 		"isActive":false
 	}, {
 		"navName": "StorySharingSession",
-		"url":"https://gitee.com/summer_hou/sss",
+		"url":"./pages/storySharingSession.html",
 		"isActive":false
 	}, {
-		"navName": "DataManagement",
-		"url":"https://gitee.com/summer_hou/data_management",
+		"navName": "clms",
+		"url":"./pages/clms.html",
+		"isActive":false
+	}, {
+		"navName": "about",
+		"url":"./pages/about.html",
 		"isActive":false
 	}]
 }
